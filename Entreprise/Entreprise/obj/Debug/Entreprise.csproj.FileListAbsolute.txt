@@ -1,0 +1,7 @@
+C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\bin\Debug\Entreprise.exe.config
+C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\bin\Debug\Entreprise.exe
+C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\bin\Debug\Entreprise.pdb
+C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.csprojResolveAssemblyReference.cache
+C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.csproj.CoreCompileInputs.cache
+C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.exe
+C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.pdb

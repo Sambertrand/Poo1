@@ -4,68 +4,71 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-/**
- * 
- */
-public class Consultant : Employee {
-
+namespace Entreprise
+{
     /**
      * 
      */
-    public Consultant() {
+    public class Consultant : Employee {
+
+        /**
+         * 
+         */
+        public Consultant() {
+        }
+
+        /**
+         * 
+         */
+        private Manager subOf;
+
+        /**
+         * 
+         */
+        private Double baseSalary;
+
+        /**
+         * 
+         */
+        private Dictionary<int,double> salaries;
+
+        /**
+         * 
+         */
+        public List<Mission> Missions;
+
+        /**
+         * 
+         */
+        public bool InMission;
+
+
+
+
+        /**
+         * @return
+         */
+        public float UpdateSalaries() {
+            // TODO implement here
+            return 44;
+        }
+
+        /**
+         * @param year 
+         * @return
+         */
+        public double GetYearSalary(int year) {
+            // TODO implement here
+            return 10;
+        }
+
+        /**
+         * @return
+         */
+        public Mission AddMission() {
+            // TODO implement here
+            return new Mission();
+        }
+
     }
-
-    /**
-     * 
-     */
-    private Manager subOf;
-
-    /**
-     * 
-     */
-    private Double baseSalary;
-
-    /**
-     * 
-     */
-    private Dico salaries;
-
-    /**
-     * 
-     */
-    public List Missions;
-
-    /**
-     * 
-     */
-    public Bool InMission;
-
-
-
-
-    /**
-     * @return
-     */
-    public Float UpdateSalaries() {
-        // TODO implement here
-        return null;
-    }
-
-    /**
-     * @param year 
-     * @return
-     */
-    public Double GetYearSalary(void year) {
-        // TODO implement here
-        return null;
-    }
-
-    /**
-     * @return
-     */
-    public Mission AddMission() {
-        // TODO implement here
-        return null;
-    }
-
 }

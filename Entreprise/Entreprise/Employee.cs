@@ -18,14 +18,14 @@ public class Employee {
     /**
      * 
      */
-    private String name;
+    private string name;
 
     /**
      * @return
      */
-    public String writeName() {
+    public string writeName() {
         // TODO implement here
-        return null;
+        return "";
     }
 
 }

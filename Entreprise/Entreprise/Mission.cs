@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-/**
+namespace Entreprise
+{
+    /**
  * 
  */
-public class Mission {
+    public class Mission
+    {
 
-    /**
-     * 
-     */
-    public Mission() {
+        /**
+         * 
+         */
+        public Mission()
+        {
+        }
+
+        /**
+         * 
+         */
+        private Consultant consultants;
+
+        /**
+         * 
+         */
+        private Client client;
+
+        /**
+         * 
+         */
+        private string dates;
+
+
+
+        /**
+         * @return
+         */
+        public string WriteMission()
+        {
+            // TODO implement here
+            return "";
+        }
+
     }
-
-    /**
-     * 
-     */
-    private Consultant consultants;
-
-    /**
-     * 
-     */
-    private Client client;
-
-    /**
-     * 
-     */
-    private String dates;
-
-
-
-    /**
-     * @return
-     */
-    public Dico WriteMission() {
-        // TODO implement here
-        return null;
-    }
-
 }

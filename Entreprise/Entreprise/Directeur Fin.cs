@@ -4,23 +4,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-/**
- * 
- */
-public class Directeur Fin : Directeur {
+namespace Entreprise
+{
+    public class DF : Directeur
+    {
+        /**
+        * 
+        */
+        public DF()
+        {
+        }
 
-    /**
-     * 
-     */
-    public Directeur Fin() {
+        /**
+        * @return
+        */
+        public string GenerateReport()
+        {
+            // TODO implement here
+            return "";
+        }
     }
-
-    /**
-     * @return
-     */
-    public toString GenerateReport() {
-        // TODO implement here
-        return null;
-    }
-
 }

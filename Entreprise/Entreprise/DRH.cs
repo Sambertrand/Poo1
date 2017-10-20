@@ -4,23 +4,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-/**
- * 
- */
-public class DRH : Directeur {
-
+namespace Entreprise
+{
     /**
-     * 
-     */
-    public DRH() {
-    }
+    * 
+    */
+    public class DRH : Directeur
+    {
 
-    /**
-     * @return
-     */
-    public toString generateReport() {
-        // TODO implement here
-        return null;
-    }
+        /**
+         * 
+         */
+        public DRH()
+        {
+        }
 
+        /**
+         * @return
+         */
+        public string generateReport()
+        {
+            // TODO implement here
+            return "";
+        }
+
+    }
 }

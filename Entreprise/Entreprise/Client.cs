@@ -4,50 +4,55 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-/**
- * 
- */
-public class Client {
+namespace Entreprise
+{
+    public class Client
+    {
 
-    /**
-     * 
-     */
-    public Client() {
+        /**
+         * 
+         */
+        public Client()
+        {
+        }
+
+        /**
+         * 
+         */
+        private string Name;
+
+        /**
+         * 
+         */
+        private List<string> Missions;
+
+
+        /**
+         * @return
+         */
+        public string writeName()
+        {
+            // TODO implement here
+            return "";
+        }
+
+        /**
+         * @return
+         */
+        public Mission AddMission()
+        {
+            // TODO implement here
+            return new Mission();
+        }
+
+        /**
+         * @return
+         */
+        public string WriteMissions()
+        {
+            // TODO implement here
+            return "";
+        }
+
     }
-
-    /**
-     * 
-     */
-    private String Name;
-
-    /**
-     * 
-     */
-    private List Missions;
-
-
-    /**
-     * @return
-     */
-    public String writeName() {
-        // TODO implement here
-        return null;
-    }
-
-    /**
-     * @return
-     */
-    public Mission AddMission() {
-        // TODO implement here
-        return null;
-    }
-
-    /**
-     * @return
-     */
-    public List WriteMissions() {
-        // TODO implement here
-        return null;
-    }
-
 }
