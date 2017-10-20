@@ -14,7 +14,7 @@ namespace Entreprise
         /**
          * 
          */
-        public Consultant() {
+        public Consultant(string name) : base(name) {
         }
 
         /**

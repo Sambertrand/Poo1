@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using NUnit.Framework;
 
 namespace Entreprise
 {
@@ -12,7 +13,7 @@ namespace Entreprise
         /**
          * 
          */
-        public Client()
+        public Client(string name)
         {
         }
 
@@ -36,13 +37,9 @@ namespace Entreprise
             return "";
         }
 
-        /**
-         * @return
-         */
-        public Mission AddMission()
+        public void AddMission(int year, Mission mission)
         {
-            // TODO implement here
-            return new Mission();
+
         }
 
         /**

@@ -15,7 +15,7 @@ namespace Entreprise
         /**
          * 
          */
-        public DRH()
+        public DRH(string name) : base(name)
         {
         }
 

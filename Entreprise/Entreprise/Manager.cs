@@ -13,7 +13,7 @@ namespace Entreprise
         /**
          * 
          */
-        public Manager() {
+        public Manager(string name) : base(name) {
         }
 
         /**

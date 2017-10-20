@@ -15,7 +15,7 @@ namespace Entreprise
         /**
          * 
          */
-        public Directeur()
+        public Directeur(string name) : base(name)
         {
         }
 
