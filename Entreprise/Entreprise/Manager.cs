@@ -5,65 +5,52 @@ using System.Linq;
 using System.Text;
 
 namespace Entreprise
-{/**
- * 
- */
-    public class Manager : Employee {
+{
 
-        /**
-         * 
-         */
-        public Manager(string name) : base(name) {
+
+    public class Manager : Employee
+    {
+
+        private List<Consultant> bossOf = new List<Consultant>();
+        private double baseSalary = 60000;
+        private Dictionary<int, double> salaries = new Dictionary<int, double>();
+
+        public Manager(string name) : base(name)
+        {
         }
 
-        /**
-         * 
-         */
-        private List<Employee> bossOf;
-
-        /**
-         * 
-         */
-        private double baseSalary;
-
-        /**
-         * 
-         */
-        private Dictionary<int, double> salaries;
-
-
-
-        /**
-         * @return
-         */
-        public double UpdateSalary() {
-            // TODO implement here
-            return 9001;
+        public void AddConsultant(Consultant consultant)
+        {
+            bossOf.Add(consultant);
         }
 
-        /**
-         * @return
-         */
-        public List<Consultant> GetSubs() {
-            // TODO implement here
-            return new List<Consultant>();
+        private void updateSalary(int year)
+        {
+            int count = 0;
+            foreach (Consultant c in bossOf)
+            {
+                if (c.YearIn <= year)
+                {
+                    count++;
+                }
+            }
+            salaries[year] = baseSalary + (500 * count);
         }
 
-        /**
-         * @return
-         */
-        public string GenerateReport() {
-            // TODO implement here
-            return "";
+        public List<Consultant> GetSubs
+        {
+            get { return bossOf; }
         }
 
-        /**
-         * @param year 
-         * @return
-         */
-        public double GetYearSalary(int year) {
+        public string GenerateReport()
+        {
             // TODO implement here
-            return 10;
+            return null;
+        }
+
+        public double GetYearSalary(int year)
+        {
+            return salaries[year];
         }
 
     }
