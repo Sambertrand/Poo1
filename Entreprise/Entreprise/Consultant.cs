@@ -42,7 +42,14 @@ namespace Entreprise
 
         public double GetYearSalary(int year)
         {
-            UpdateSalaries(year);
+            try
+            {
+                UpdateSalaries(year);
+            }
+            catch (KeyNotFoundException)
+            {
+                return 0;
+            }
             return salaries[year];
         }
 
