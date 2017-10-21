@@ -108,6 +108,21 @@ namespace Entreprise
             Assert.AreEqual(0, c.GetYearSalary(2016));
         }
     }
+    [TestFixture()]
+    public class TestClient
+    {
+        private Client s;
 
-    
-}   
+        [SetUp()]
+        public void Init()
+        {
+            s = new Client("Sam");
+        }
+
+        [Test()]
+        public void TestClientName()
+        {
+            Assert.AreEqual("Sam", s.Name);
+        }
+    }
+}
