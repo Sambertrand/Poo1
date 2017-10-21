@@ -41,22 +41,31 @@ namespace Entreprise
         }
     }
 
-    /*[TestFixture()]
-    public class TestClient
+    [TestFixture()]
+    public class TestManager
     {
+        private Manager m;
+        private Consultant c;
+
+        [SetUp()]
+        public void Init()
+        {
+            m = new Manager("Seb");
+            c = new Consultant("Martin");
+        }
+
         [Test()]
         public void TestWriteName()
         {
-            Client Sam = new Client("Sam");
-            Assert.AreEqual("Sam", Sam.writeName());
+            Assert.AreEqual("Seb", m.WriteName());
+
         }
-        [Test()]
-        public void TestAddMission()
+        /*[Test()]
+        public void TestAddConsultant()
         {
-            Client Sam = new Client("Sam");
-            Consultant Martin = new Consultant( );
-            Manager Seb = new Manager("Seb")
-            Assert.AreEqual("Sam", Sam.AddMission(2017, new Mission(Sam, )));
+            Assert.AreEqual(, m.AddConsultant(c));
+
         }
         */
+    }
 }   
