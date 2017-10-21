@@ -30,13 +30,14 @@ namespace Entreprise
                 client.AddMission(year, this);
                 consultant.AddMission(year, this);
             }
-            else
+            /*else
             {
                 // à faire dans le READER
                 new Mission(client, consultant, DateTime(year1, 01, 01), endDate);
                 new Mission(client, consultant, startDate, DateTime(year, 12, 31));
 
             }
+            */
 
         }
 

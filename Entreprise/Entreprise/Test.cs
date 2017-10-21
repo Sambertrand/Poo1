@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace Entreprise
 {
@@ -46,12 +47,15 @@ namespace Entreprise
     {
         private Manager m;
         private Consultant c;
+        List<Consultant> l = new List<Consultant>();
 
         [SetUp()]
         public void Init()
         {
             m = new Manager("Seb");
-            c = new Consultant("Martin");
+            c = new Consultant("Martin", m, 2017);
+            m.AddConsultant(c);            
+            l.Add(c);
         }
 
         [Test()]
@@ -60,12 +64,12 @@ namespace Entreprise
             Assert.AreEqual("Seb", m.WriteName());
 
         }
-        /*[Test()]
-        public void TestAddConsultant()
+        [Test()]
+        public void TestGetSubs()
         {
-            Assert.AreEqual(, m.AddConsultant(c));
+            Assert.AreEqual(l , m.GetSubs);
 
         }
-        */
+        
     }
 }   
