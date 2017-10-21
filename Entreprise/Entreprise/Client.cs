@@ -10,45 +10,39 @@ namespace Entreprise
     public class Client
     {
 
-        /**
-         * 
-         */
+        private string name;
+        private Dictionary<int, List<Mission>> missions =
+            new Dictionary<int, List<Mission>>();
+
+
         public Client(string name)
         {
+            this.name = name;
         }
 
-        /**
-         * 
-         */
-        private string Name;
-
-        /**
-         * 
-         */
-        private List<string> Missions;
-
-
-        /**
-         * @return
-         */
-        public string writeName()
+        public string Name
         {
-            // TODO implement here
-            return "";
+            get { return name; }
         }
 
-        public void AddMission(int year, Mission mission)
+        public void addMission(int year, Mission mission)
         {
+            try
+            {
+                test[year].Add(mission);
 
+            }
+            catch (KeyNotFoundException)
+            {
+                List<int> list = new List<int>();
+                test.Add(year, list);
+                test[year].Add(mission);
+            }
         }
 
-        /**
-         * @return
-         */
-        public string WriteMissions()
+        public Dictionary<int, List<Mission>> Missions
         {
-            // TODO implement here
-            return "";
+            get { return missions; }
         }
 
     }
