@@ -69,6 +69,7 @@ namespace Entreprise
             Assert.AreEqual(l , m.GetSubs);
 
         }
+        
         [Test()]
         public void TestGetSalary()
         {
@@ -76,6 +77,7 @@ namespace Entreprise
             Assert.AreEqual(60000, m.GetYearSalary(2016));
 
         }
+        
 
     }
 }   

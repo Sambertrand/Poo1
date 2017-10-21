@@ -24,7 +24,7 @@ namespace Entreprise
             bossOf.Add(consultant);
         }
 
-        private void updateSalary(int year)
+        private void UpdateSalary(int year)
         {
             int count = 0;
             foreach (Consultant c in bossOf)
@@ -50,6 +50,7 @@ namespace Entreprise
 
         public double GetYearSalary(int year)
         {
+            UpdateSalary(year);
             return salaries[year];
         }
 
