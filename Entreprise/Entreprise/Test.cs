@@ -17,7 +17,7 @@ namespace Entreprise
         [Test()]
         public void TestwriteName()
         {
-            Assert.AreEqual("Martin", e.writeName());
+            Assert.AreEqual("Martin Degeldt", e.writeName());
         }
     }
 
