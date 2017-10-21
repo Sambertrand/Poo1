@@ -27,8 +27,8 @@ namespace Entreprise
             this.year1 = endDate.Year;
             if (year == year1)
             {
-                client.addMission(year, this);
-                consultant.addMission(year, this);
+                client.AddMission(year, this);
+                consultant.AddMission(year, this);
             }
             else
             {
