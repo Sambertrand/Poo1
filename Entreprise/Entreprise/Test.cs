@@ -32,7 +32,7 @@ namespace Entreprise
         }
     }
 
-    [TestFixture()]
+    /*[TestFixture()]
     public class TestClient
     {
         [Test()]
@@ -41,7 +41,7 @@ namespace Entreprise
             Client Sam = new Client("Sam");
             Assert.AreEqual("Sam", Sam.writeName());
         }
-        /*[Test()]
+        [Test()]
         public void TestAddMission()
         {
             Client Sam = new Client("Sam");
@@ -50,5 +50,4 @@ namespace Entreprise
             Assert.AreEqual("Sam", Sam.AddMission(2017, new Mission(Sam, )));
         }
         */
-    }   
-}
+}   
