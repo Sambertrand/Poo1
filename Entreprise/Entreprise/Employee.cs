@@ -15,7 +15,7 @@ public class Employee
         this.name = name;
     }
 
-    public string writeName()
+    public string WriteName()
     {
         return name;
     }
