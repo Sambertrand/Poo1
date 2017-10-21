@@ -25,18 +25,18 @@ namespace Entreprise
             get { return name; }
         }
 
-        public void addMission(int year, Mission mission)
+        public void AddMission(int year, Mission mission)
         {
             try
             {
-                test[year].Add(mission);
+                missions[year].Add(mission);
 
             }
             catch (KeyNotFoundException)
             {
-                List<int> list = new List<int>();
-                test.Add(year, list);
-                test[year].Add(mission);
+                List<Mission> list = new List<Mission>();
+                missions.Add(year, list);
+                missions[year].Add(mission);
             }
         }
 
