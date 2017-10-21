@@ -4,34 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Entreprise
+
+public class Directeur : Employee
 {
-    /**
- * 
- */
-    public class Directeur : Employee
+
+    private double baseSalary = 150000;
+
+    public Directeur(string name) : base(name)
     {
-
-        /**
-         * 
-         */
-        public Directeur(string name) : base(name)
-        {
-        }
-
-        /**
-         * 
-         */
-        private double baseSalary;
-
-        /**
-         * @return
-         */
-        public double GetSalary()
-        {
-            // TODO implement here
-            return 1000;
-        }
-
     }
+
+    public double GetSalary
+    {
+        get { return baseSalary; }
+    }
+
 }
