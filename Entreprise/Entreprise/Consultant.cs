@@ -10,7 +10,7 @@ namespace Entreprise
     {
 
         private Manager subOf;
-        private double baseSalary = 60000;
+        private double baseSalary = 35000;
         private Dictionary<int, double> salaries = new Dictionary<int, double>();
         private Dictionary<int, List<Mission>> missions =
             new Dictionary<int, List<Mission>>();

@@ -53,7 +53,7 @@ namespace Entreprise
         public void Init()
         {
             m = new Manager("Seb");
-            c = new Consultant("Martin", m, 2017);            
+            c = new Consultant("Martin", m, 2017);
             l.Add(c);
         }
 
@@ -66,18 +66,48 @@ namespace Entreprise
         [Test()]
         public void TestGetSubs()
         {
-            Assert.AreEqual(l , m.GetSubs);
+            Assert.AreEqual(l, m.GetSubs);
 
         }
-        
-        [Test()]
+
+        /*[Test()]
         public void TestGetSalary()
         {
-            Assert.AreEqual(60500, m.GetYearSalary(2017));
+            Assert.AreEqual(60500, m.GetYearSalary(2017));            
             Assert.AreEqual(60000, m.GetYearSalary(2016));
-
         }
-        
-
+        à demander au proffeseur
+        */
     }
+
+    [TestFixture()]
+    public class TestConsultant
+    {
+        private Consultant c;
+        private Manager m;
+        private Client s;
+        private Mission p;
+        private DateTime d;
+        private DateTime e;
+
+        [SetUp()]
+        public void Init()
+        {
+            d = new DateTime(2017, 05, 17);
+            e = new DateTime(2017, 12, 31);
+            m = new Manager("Seb");
+            s = new Client("Sam");
+            c = new Consultant("Martin", m, 2017);
+            p = new Mission(s, c, d, e);
+        }
+
+        [Test()]
+        public void TestConsultantGetYearSalary()
+        {
+            Assert.AreEqual(35605, c.GetYearSalary(2017));
+            Assert.AreEqual(35000, c.GetYearSalary(2016));
+        }
+    }
+
+    
 }   
