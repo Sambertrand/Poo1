@@ -7,17 +7,20 @@ namespace Entreprise
     public class TestEmployee
     {
         private Employee e;
+        private Employee m;
 
         [SetUp()]
         public void Init()
         {
             e = new Employee("Martin Degeldt");
+            m = new Employee("");
         }
 
         [Test()]
         public void TestwriteName()
         {
             Assert.AreEqual("Martin Degeldt", e.WriteName());
+            Assert.AreEqual("", m.WriteName());
         }
     }
 
