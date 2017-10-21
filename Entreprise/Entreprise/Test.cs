@@ -53,8 +53,7 @@ namespace Entreprise
         public void Init()
         {
             m = new Manager("Seb");
-            c = new Consultant("Martin", m, 2017);
-            m.AddConsultant(c);            
+            c = new Consultant("Martin", m, 2017);            
             l.Add(c);
         }
 
@@ -70,6 +69,13 @@ namespace Entreprise
             Assert.AreEqual(l , m.GetSubs);
 
         }
-        
+        [Test()]
+        public void TestGetSalary()
+        {
+            Assert.AreEqual(60500, m.GetYearSalary(2017));
+            Assert.AreEqual(60000, m.GetYearSalary(2016));
+
+        }
+
     }
 }   
