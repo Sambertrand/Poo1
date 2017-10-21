@@ -105,7 +105,7 @@ namespace Entreprise
         public void TestConsultantGetYearSalary()
         {
             Assert.AreEqual(35605, c.GetYearSalary(2017));
-            Assert.AreEqual(35000, c.GetYearSalary(2016));
+            Assert.AreEqual(0, c.GetYearSalary(2016));
         }
     }
 
