@@ -6,13 +6,32 @@ namespace Entreprise
     [TestFixture()]
     public class TestEmployee
     {
+        private Employee e;
+
+        [SetUp()]
+        public void Init()
+        {
+            e = new Employee("Martin Degeldt");
+        }
+
         [Test()]
         public void TestwriteName()
         {
-            Employee Martin = new Employee("Martin");
-            Assert.AreEqual("Martin", Martin.writeName());
+            Assert.AreEqual("Martin", e.writeName());
         }
     }
+
+    [TestFixture()]
+    public class TestDirecteur
+    {
+        [Test()]
+        public void TestGetSalary()
+        {
+            Directeur VDD = new Directeur("VDD");
+            Assert.AreEqual("150000", VDD.GetSalary());
+        }
+    }
+
     [TestFixture()]
     public class TestClient
     {
@@ -31,5 +50,5 @@ namespace Entreprise
             Assert.AreEqual("Sam", Sam.AddMission(2017, new Mission(Sam, )));
         }
         */
-}   
+    }   
 }
