@@ -23,15 +23,21 @@ namespace Entreprise
             Assert.AreEqual("", m.WriteName());
         }
     }
-
     [TestFixture()]
     public class TestDirecteur
     {
+        private Directeur d;
+
+        [SetUp()]
+        public void Init()
+        {
+            d = new Directeur("VDD");
+        }
+
         [Test()]
         public void TestGetSalary()
         {
-            Directeur VDD = new Directeur("VDD");
-            Assert.AreEqual("150000", VDD.GetSalary());
+            Assert.AreEqual(150000, d.GetSalary);
         }
     }
 
