@@ -145,6 +145,7 @@ namespace Entreprise
             }
 
             ma[0].GenerateReport();
+            direhu.GenerateReport(ci[0]);
 
             Console.ReadKey();
         }

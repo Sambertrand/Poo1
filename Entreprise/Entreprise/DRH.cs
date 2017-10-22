@@ -13,13 +13,23 @@ namespace Entreprise
 
         }
 
-        public void generateReport()
+        public void GenerateReport(Client client)
         {
-            List<string> lines = new List<string>();
+            List<string> lines = new List<string>
+            {
+                "Liste des consultants dans " + client.Name +" :",
+                " "
+            };
 
-            /*
-             * fill the list of strings of each line every item of the list
-             */
+            string line = null;
+            DateTime now = DateTime.Now;
+
+            foreach (Mission mis in client.Missions[now.Year])
+            {
+                line = mis.Consultant.ToString() + " : du " + mis.StartDate.ToString("MM/dd/yyyy") + " au " + mis.EndDate.ToString("MM/dd/yyyy");
+                lines.Add(line);
+            }
+            
             lines.ToArray();
             System.IO.File.WriteAllLines(@"../../../RapportDRH.txt", lines);
         }
