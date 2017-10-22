@@ -12,7 +12,8 @@ namespace Entreprise
         static void Main(string[] args)
         {
             List<Directeur> di = new List<Directeur>();
-            DF dF = null;
+            List<Manager> ma = new List<Manager>();
+            DF difin = null;
             DRH direhu = null;
             string[] lines = System.IO.File.ReadAllLines(@"../../../input.txt");
             foreach (string line in lines)
@@ -27,17 +28,24 @@ namespace Entreprise
 
                 if (words[0] == "DF")
                 {
-                   dF = new DF(words[1], words[2]);
+                    difin = new DF(words[1], words[2]);
                 }
 
                 if (words[0] == "DH")
                 {
                     direhu = new DRH(words[1], words[2]);
                 }
+
+                if (words[0] == "MA")
+                {
+                    Manager manager = new Manager(words[1], words[2]);
+                    ma.Add(manager);
+                }
             }
             Console.WriteLine(di[0]);
-            Console.WriteLine(dF);
+            Console.WriteLine(difin);
             Console.WriteLine(direhu);
+            Console.WriteLine(ma[0]);
             Console.ReadKey();
         }
     }
