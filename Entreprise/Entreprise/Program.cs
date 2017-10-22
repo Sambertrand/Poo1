@@ -11,6 +11,14 @@ namespace Entreprise
     {
         static void Main(string[] args)
         {
+
+            string[] lines = System.IO.File.ReadAllLines(@"../inpput.txt");
+            foreach (string line in lines)
+            {
+
+            }
         }
     }
+
+    
 }

@@ -15,7 +15,7 @@ namespace Entreprise
         private double baseSalary = 60000;
         private Dictionary<int, double> salaries = new Dictionary<int, double>();
 
-        public Manager(string name) : base(name)
+        public Manager(string firstname, string lastname) : base(firstname, lastname)
         {
         }
 

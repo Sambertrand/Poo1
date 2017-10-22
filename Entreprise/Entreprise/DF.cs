@@ -11,7 +11,7 @@ namespace Entreprise
         /**
         * 
         */
-        public DF(string name) :base(name)
+        public DF(string firstname, string lastname) : base(firstname, lastname)
         {
         }
 

@@ -16,7 +16,7 @@ namespace Entreprise
             new Dictionary<int, List<Mission>>();
         private int yearIn;
 
-        public Consultant(string name, Manager subOf, int yearIn) : base(name)
+        public Consultant(string firstname, string lastname, Manager subOf, int yearIn) : base(firstname, lastname)
         {
             this.yearIn = yearIn;
             this.subOf = subOf;

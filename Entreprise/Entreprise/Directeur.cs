@@ -10,7 +10,7 @@ public class Directeur : Employee
 
     private double baseSalary = 150000;
 
-    public Directeur(string name) : base(name)
+    public Directeur(string firstname, string lastname) : base(firstname, lastname)
     {
     }
 
