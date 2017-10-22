@@ -43,6 +43,7 @@ namespace Entreprise
         private void UpdateSalaries(int year)
         {
             int dayEntreprise = 0;
+            int count = 0;
             double bosssalary = subOf.GetYearSalary(year);
             foreach (Mission m in missions[year])
             {
@@ -51,9 +52,13 @@ namespace Entreprise
                     TimeSpan ts = m.EndDate - m.StartDate;
                     dayEntreprise += ts.Days;
                 }
+                else
+                {
+                    count++;
+                }
             }
 
-            double salaire = baseSalary - 10 * dayEntreprise + bosssalary / 100;
+            double salaire = baseSalary - 10 * dayEntreprise + bosssalary / 100 + 250*count;
             salaries.Add(year, salaire);
         }
 
@@ -103,6 +108,11 @@ namespace Entreprise
         public string Matricule
         {
             get { return matricule; }
+        }
+
+        public List<Mission> GetMissions(int year)
+        {
+            return missions[year];
         }
     }
 }

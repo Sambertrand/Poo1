@@ -137,7 +137,14 @@ namespace Entreprise
                     Console.Write("----|");
                     Console.WriteLine(mis.Consultant);
                 }
+                foreach (Mission mis in cli.Missions[2017])
+                {
+                    Console.Write("----|");
+                    Console.WriteLine(mis.Consultant);
+                }
             }
+
+            ma[0].GenerateReport();
 
             Console.ReadKey();
         }

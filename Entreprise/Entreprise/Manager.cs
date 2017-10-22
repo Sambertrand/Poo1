@@ -57,13 +57,29 @@ namespace Entreprise
 
         public void GenerateReport()
         {
-            List<string> lines = new List<string>() ;
-            
-            /*
-             * fill the list of strings of each line every item of the list
-             */
+            List<string> lines = new List<string>
+            {
+                "Liste des consultants travaillant sous " + ToString(),
+                " "
+            };
+
+            string line = null;
+
+            DateTime now = DateTime.Now;
+            foreach (Consultant sub in bossOf)
+            {
+                foreach(Mission mis in sub.GetMissions(now.Year))
+                {
+                    if (mis.EndDate > now)
+                    {
+                        line = sub.ToString() + " : " + mis.Client.Name + " du " + mis.StartDate.ToString() + " au " + mis.EndDate.ToString();
+                        lines.Add(line);
+                    }
+                }
+            }
+
             lines.ToArray();
-            System.IO.File.WriteAllLines(@"../../../RapportManager.txt", lines);
+            System.IO.File.WriteAllLines(@"../../../RapportManager" + matricule +".txt", lines);
         }
     }
 }
