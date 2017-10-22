@@ -22,10 +22,14 @@ namespace Entreprise
         /**
          * @return
          */
-        public string generateReport()
+        public void generateReport()
         {
-            // TODO implement here
-            return "";
+            List<string> lines = new List<string>();
+
+            /*fill the list of strings of each line every item of the list
+             */
+            lines.ToArray();
+            System.IO.File.WriteAllLines(@"..\..\RapportDRH.txt", lines);
         }
 
     }

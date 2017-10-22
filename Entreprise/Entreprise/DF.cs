@@ -18,10 +18,14 @@ namespace Entreprise
         /**
         * @return
         */
-        public string GenerateReport()
+        public void GenerateReport()
         {
-            // TODO implement here
-            return "";
+            List<string> lines = new List<string>();
+
+            /*fill the list of strings of each line every item of the list
+             */
+            lines.ToArray();
+            System.IO.File.WriteAllLines(@"..\..\RapportDF.txt", lines);
         }
     }
 }

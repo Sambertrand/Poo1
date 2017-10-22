@@ -49,17 +49,21 @@ namespace Entreprise
             get { return matricule; }
         }
 
-        public string GenerateReport()
-        {
-            // TODO implement here
-            return null;
-        }
-
         public double GetYearSalary(int year)
         {
             UpdateSalary(year);
             return salaries[year];
         }
 
+        public void GenerateReport()
+        {
+            List<string> lines = new List<string>() ;
+            
+            /*fill the list of strings of each line every item of the list
+             */
+            lines.ToArray();
+            System.IO.File.WriteAllLines(@"..\..\RapportManager.txt",lines);
+        }
     }
+            
 }
