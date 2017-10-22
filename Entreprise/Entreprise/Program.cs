@@ -14,7 +14,7 @@ namespace Entreprise
             List<Directeur> di = new List<Directeur>();
             DF difin;
             DRH direhu;
-            string[] lines = System.IO.File.ReadAllLines(@"../inpput.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"../input.txt");
             foreach (string line in lines)
             {
                 string[] words = line.Split(' ');
@@ -35,6 +35,8 @@ namespace Entreprise
                     direhu = new DRH(words[1], words[2]);
                 }
             }
+            Console.WriteLine(di[0]);
+            Console.WriteLine(difin);
         }
     }
 

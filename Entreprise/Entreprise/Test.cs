@@ -13,15 +13,15 @@ namespace Entreprise
         [SetUp()]
         public void Init()
         {
-            e = new Employee("Martin Degeldt");
-            m = new Employee("");
+            e = new Employee("Martin", "Degeldt");
+            m = new Employee("", "");
         }
 
         [Test()]
         public void TestwriteName()
         {
-            Assert.AreEqual("Martin Degeldt", e.WriteName());
-            Assert.AreEqual("", m.WriteName());
+            Assert.AreEqual("Martin Degeldt", e.ToString());
+            Assert.AreEqual("", m.ToString());
         }
     }
     [TestFixture()]
@@ -32,7 +32,7 @@ namespace Entreprise
         [SetUp()]
         public void Init()
         {
-            d = new Directeur("VDD");
+            d = new Directeur("xav", "VDD");
         }
 
         [Test()]
@@ -52,15 +52,15 @@ namespace Entreprise
         [SetUp()]
         public void Init()
         {
-            m = new Manager("Seb");
-            c = new Consultant("Martin", m, 2017);
+            m = new Manager("Seb", "CBF");
+            c = new Consultant("Martin", "D", m, 2017);
             l.Add(c);
         }
 
         [Test()]
         public void TestWriteName()
         {
-            Assert.AreEqual("Seb", m.WriteName());
+            Assert.AreEqual("Seb CBF", m.ToString());
 
         }
         [Test()]
@@ -95,9 +95,9 @@ namespace Entreprise
         {
             d = new DateTime(2017, 05, 17);
             e = new DateTime(2017, 12, 31);
-            m = new Manager("Seb");
+            m = new Manager("Seb", "CBF");
             s = new Client("Sam");
-            c = new Consultant("Martin", m, 2017);
+            c = new Consultant("Martin", "D", m, 2017);
             p = new Mission(s, c, d, e);
         }
 
