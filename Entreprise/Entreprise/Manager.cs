@@ -72,7 +72,8 @@ namespace Entreprise
                 {
                     if (mis.EndDate > now)
                     {
-                        line = sub.ToString() + " : " + mis.Client.Name + " du " + mis.StartDate.ToString() + " au " + mis.EndDate.ToString();
+                        line = sub.ToString() + " : " + mis.Client.Name + " du " + mis.StartDate.ToString("MM/dd/yyyy") +
+                            " au " + mis.EndDate.ToString("MM / dd / yyyy");
                         lines.Add(line);
                     }
                 }
