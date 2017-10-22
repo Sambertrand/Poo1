@@ -15,9 +15,11 @@ namespace Entreprise
         private Dictionary<int, List<Mission>> missions =
             new Dictionary<int, List<Mission>>();
         private int yearIn;
+        private string matricule;
 
-        public Consultant(string firstname, string lastname, Manager subOf, int yearIn) : base(firstname, lastname)
+        public Consultant(string firstname, string lastname, Manager subOf, int yearIn, string matricule) : base(firstname, lastname)
         {
+            this.matricule = matricule;
             this.yearIn = yearIn;
             this.subOf = subOf;
             subOf.AddConsultant(this);
@@ -73,5 +75,9 @@ namespace Entreprise
             get { return yearIn; }
         }
 
+        public string Matricule
+        {
+            get { return matricule; }
+        }
     }
 }

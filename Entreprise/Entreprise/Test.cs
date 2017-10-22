@@ -52,8 +52,8 @@ namespace Entreprise
         [SetUp()]
         public void Init()
         {
-            m = new Manager("Seb", "CBF");
-            c = new Consultant("Martin", "D", m, 2017);
+            m = new Manager("Seb", "CBF", "MA01");
+            c = new Consultant("Martin", "D", m, 2017, "CO1701");
             l.Add(c);
         }
 
@@ -95,9 +95,9 @@ namespace Entreprise
         {
             d = new DateTime(2017, 05, 17);
             e = new DateTime(2017, 12, 31);
-            m = new Manager("Seb", "CBF");
+            m = new Manager("Seb", "CBF", "MA01");
             s = new Client("Sam");
-            c = new Consultant("Martin", "D", m, 2017);
+            c = new Consultant("Martin", "D", m, 2017, "CO1701");
             p = new Mission(s, c, d, e);
         }
 
