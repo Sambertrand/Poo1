@@ -63,7 +63,7 @@ namespace Entreprise
              * fill the list of strings of each line every item of the list
              */
             lines.ToArray();
-            System.IO.File.WriteAllLines(@"../../RapportManager.txt",lines);
+            System.IO.File.WriteAllLines(@"../../../RapportManager.txt", lines);
         }
     }
 }

@@ -96,7 +96,7 @@ namespace Entreprise
             d = new DateTime(2017, 05, 17);
             e = new DateTime(2017, 12, 31);
             m = new Manager("Seb", "CBF", "MA01");
-            s = new Client("Sam");
+            s = new Client("Sam", "CL00");
             c = new Consultant("Martin", "D", m, 2017, "CO1701");
             p = new Mission(s, c, d, e);
         }
@@ -116,7 +116,7 @@ namespace Entreprise
         [SetUp()]
         public void Init()
         {
-            s = new Client("Sam");
+            s = new Client("Sam", "CL00");
         }
 
         [Test()]

@@ -61,13 +61,86 @@ namespace Entreprise
                 Consultant consultant = new Consultant(words[0], words[1], manager, Int32.Parse(words[3]), words[4]);
             }
 
-            Console.WriteLine(ma[0].GetSubs[0].ToString());
+            lines = System.IO.File.ReadAllLines(@"../../../inputCli.txt");
+            foreach (string line in lines)
+            {
+                string[] words = line.Split(' ');
+                Client client = new Client(words[0], words[1]);
+                ci.Add(client);
+            }
+
+            lines = System.IO.File.ReadAllLines(@"../../../inputMis.txt");
+            foreach (string line in lines)
+            {
+                string[] words = line.Split(' ');
+                string[] datein = words[2].Split('-');
+                string[] dateout = words[3].Split('-');
+                DateTime DateIn = new DateTime(Int32.Parse(datein[2]), Int32.Parse(datein[1]), Int32.Parse(datein[0]));
+                DateTime DateOut = new DateTime(Int32.Parse(dateout[2]), Int32.Parse(dateout[1]), Int32.Parse(dateout[0]));
+
+                Client client = null;
+                Consultant consultant = null;
+
+                foreach (Client cli in ci)
+                {
+                    if (cli.Matricule == words[0])
+                    {
+                        client = cli;
+                    }
+                }
+
+                foreach (Manager man in ma)
+                {
+                    foreach (Consultant con in man.GetSubs)
+                    {
+                        if (con.Matricule == words[1])
+                        {
+                            consultant = con;
+                        }
+                    }
+                }
+
+                if (DateIn.Year == DateOut.Year)
+                {
+                    new Mission(client, consultant, DateIn, DateOut);
+                }
+                else
+                {
+                    DateTime DateInbis = new DateTime(DateOut.Year, 01, 01);
+                    DateTime DateOutbis = new DateTime(DateIn.Year, 12, 31);
+
+                    new Mission(client, consultant, DateIn, DateOutbis);
+                    new Mission(client, consultant, DateInbis, DateOut);
+                }
+            }
+
+            foreach(Directeur dir in di)
+            {
+                Console.WriteLine(dir);
+            }
+            Console.WriteLine(direhu);
+            Console.WriteLine(difin);
+            foreach (Manager man in ma)
+            {
+                Console.WriteLine(man);
+                foreach (Consultant con in man.GetSubs)
+                {
+                    Console.Write("----|");
+                    Console.WriteLine(con);
+                }
+            }
+            foreach(Client cli in ci)
+            {
+                Console.WriteLine(cli.Name);
+                foreach (Mission mis in cli.Missions[2016])
+                {
+                    Console.Write("----|");
+                    Console.WriteLine(mis.Consultant);
+                }
+            }
+
             Console.ReadKey();
-
-
         }
     }
-
-    
 }
 

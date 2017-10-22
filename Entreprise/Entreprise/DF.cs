@@ -22,10 +22,11 @@ namespace Entreprise
         {
             List<string> lines = new List<string>();
 
-            /*fill the list of strings of each line every item of the list
+            /*
+             * fill the list of strings of each line every item of the list
              */
             lines.ToArray();
-            System.IO.File.WriteAllLines(@"../../RapportDF.txt", lines);
+            System.IO.File.WriteAllLines(@"../../../RapportDF.txt", lines);
         }
     }
 }

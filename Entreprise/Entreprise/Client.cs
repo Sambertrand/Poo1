@@ -12,15 +12,16 @@ namespace Entreprise
     /// </summary>
     public class Client
     {
-
+        private string matricule;
         private string name;
         private Dictionary<int, List<Mission>> missions =
             new Dictionary<int, List<Mission>>();
 
 
-        public Client(string name)
+        public Client(string name, string matricule)
         {
             this.name = name;
+            this.matricule = matricule;
         }
 
         /// <summary>
@@ -29,6 +30,11 @@ namespace Entreprise
         public string Name
         {
             get { return name; }
+        }
+
+        public string Matricule
+        {
+            get { return matricule; }
         }
 
         /// <summary>
