@@ -6,31 +6,22 @@ using System.Text;
 
 namespace Entreprise
 {
-    /**
-    * 
-    */
     public class DRH : Directeur
     {
-
-        /**
-         * 
-         */
         public DRH(string firstname, string lastname) : base(firstname, lastname)
         {
+
         }
 
-        /**
-         * @return
-         */
         public void generateReport()
         {
             List<string> lines = new List<string>();
 
-            /*fill the list of strings of each line every item of the list
+            /*
+             * fill the list of strings of each line every item of the list
              */
             lines.ToArray();
-            System.IO.File.WriteAllLines(@"..\..\RapportDRH.txt", lines);
+            System.IO.File.WriteAllLines(@"../../RapportDRH.txt", lines);
         }
-
     }
 }
