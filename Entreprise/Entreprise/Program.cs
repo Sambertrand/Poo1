@@ -12,9 +12,9 @@ namespace Entreprise
         static void Main(string[] args)
         {
             List<Directeur> di = new List<Directeur>();
-            DF difin;
-            DRH direhu;
-            string[] lines = System.IO.File.ReadAllLines(@"../input.txt");
+            DF dF = null;
+            DRH direhu = null;
+            string[] lines = System.IO.File.ReadAllLines(@"../../../input.txt");
             foreach (string line in lines)
             {
                 string[] words = line.Split(' ');
@@ -27,7 +27,7 @@ namespace Entreprise
 
                 if (words[0] == "DF")
                 {
-                    difin = new DF(words[1], words[2]);
+                   dF = new DF(words[1], words[2]);
                 }
 
                 if (words[0] == "DH")
@@ -36,7 +36,9 @@ namespace Entreprise
                 }
             }
             Console.WriteLine(di[0]);
-            Console.WriteLine(difin);
+            Console.WriteLine(dF);
+            Console.WriteLine(direhu);
+            Console.ReadKey();
         }
     }
 
