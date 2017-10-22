@@ -30,11 +30,13 @@ namespace Entreprise
                 if (words[0] == "DF")
                 {
                     difin = new DF(words[1], words[2]);
+                    di.Add(difin);
                 }
 
                 if (words[0] == "DH")
                 {
                     direhu = new DRH(words[1], words[2]);
+                    di.Add(direhu);
                 }
             }
 
@@ -146,9 +148,10 @@ namespace Entreprise
 
             ma[0].GenerateReport();
             direhu.GenerateReport(ci[0]);
+            difin.GenerateReport(di, ma, 2016);
+            difin.GenerateReport(di, ma, 2017);
 
             Console.ReadKey();
         }
     }
 }
-
