@@ -11,6 +11,9 @@ namespace Entreprise
     {
         static void Main(string[] args)
         {
+            /**
+             * Load from the input files
+             */
             List<Directeur> di = new List<Directeur>();
             List<Manager> ma = new List<Manager>();
             List<Client> ci = new List<Client>();
@@ -116,6 +119,7 @@ namespace Entreprise
                 }
             }
 
+            /* ##Display the elements of the var creadted
             foreach(Directeur dir in di)
             {
                 Console.WriteLine(dir);
@@ -152,6 +156,65 @@ namespace Entreprise
             difin.GenerateReport(di, ma, 2017);
 
             Console.ReadKey();
+
+            */
+
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("Select a mod (enter the number of your selection)");
+                Console.WriteLine(" ");
+                Console.WriteLine("1. Get report of a manager");
+                Console.WriteLine("2. Get report of the Human Resources Director");
+                Console.WriteLine("3. Get report of the financial director");
+                Console.WriteLine(" ");
+                string select = Console.ReadLine();
+
+                if (select == "1")
+                {
+                    Console.Clear();
+                    Console.WriteLine("Select a manager");
+                    Console.WriteLine(" ");
+
+                    int count = 0;
+                    foreach (Manager man in ma)
+                    {
+                        count++;
+                        Console.WriteLine(count.ToString() + ". " + man.ToString());
+                    }
+                    bool cond = true;
+                    while (cond)
+                    {
+                        try
+                        {
+                            Console.WriteLine(" ");
+                            select = Console.ReadLine();
+                            ma[Int32.Parse(select) - 1].GenerateReport();
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Report generated");
+                            Console.ReadKey();
+                            cond = false;
+                        }
+                        catch
+                        {
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Please select a manager");
+                        }
+                    }
+                }
+
+                if (select == "2")
+                {
+
+                }
+
+                if (select == "3")
+                {
+
+                }
+            }
+
+            
         }
     }
 }
