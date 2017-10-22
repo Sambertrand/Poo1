@@ -14,9 +14,11 @@ namespace Entreprise
         private List<Consultant> bossOf = new List<Consultant>();
         private double baseSalary = 60000;
         private Dictionary<int, double> salaries = new Dictionary<int, double>();
+        private string matricule;
 
-        public Manager(string firstname, string lastname) : base(firstname, lastname)
+        public Manager(string firstname, string lastname, string matricule) : base(firstname, lastname)
         {
+            this.matricule = matricule;
         }
 
         public void AddConsultant(Consultant consultant)
@@ -40,6 +42,11 @@ namespace Entreprise
         public List<Consultant> GetSubs
         {
             get { return bossOf; }
+        }
+
+        public string Matricule
+        {
+            get { return matricule; }
         }
 
         public string GenerateReport()

@@ -15,7 +15,7 @@ namespace Entreprise
             List<Manager> ma = new List<Manager>();
             DF difin = null;
             DRH direhu = null;
-            string[] lines = System.IO.File.ReadAllLines(@"../../../input.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"../../../inputDir.txt");
             foreach (string line in lines)
             {
                 string[] words = line.Split(' ');
@@ -35,20 +35,18 @@ namespace Entreprise
                 {
                     direhu = new DRH(words[1], words[2]);
                 }
-
-                if (words[0] == "MA")
-                {
-                    Manager manager = new Manager(words[1], words[2]);
-                    ma.Add(manager);
-                }
             }
-            Console.WriteLine(di[0]);
-            Console.WriteLine(difin);
-            Console.WriteLine(direhu);
-            Console.WriteLine(ma[0]);
-            Console.ReadKey();
+
+            lines = System.IO.File.ReadAllLines(@"../../../inputMan.txt");
+            foreach (string line in lines)
+            {
+                string[] words = line.Split(' ');
+                Manager manager = new Manager(words[0], words[1], words[2]);
+                ma.Add(manager);
+            }
         }
     }
 
     
 }
+
