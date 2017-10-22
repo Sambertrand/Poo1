@@ -61,7 +61,7 @@ namespace Entreprise
                 Consultant consultant = new Consultant(words[0], words[1], manager, Int32.Parse(words[3]), words[4]);
             }
 
-            Console.WriteLine(ma[0]);
+            Console.WriteLine(ma[0].GetSubs[0].ToString());
             Console.ReadKey();
 
 
