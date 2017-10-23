@@ -40,13 +40,13 @@ namespace Entreprise
         /// <summary>
         /// Method that adds a mission to the clients missions list used to generate the DRH report
         /// </summary>
-        /// <param name="year"></param>
         /// <param name="mission"></param>
-        public void AddMission(int year, Mission mission)
+        public void AddMission(Mission mission)
         {
-            try
-            {
-                missions[year].Add(mission);
+			int year = mission.StartDate.Year;
+			try
+			{
+				missions[year].Add(mission);
 
             }
             catch (KeyNotFoundException)

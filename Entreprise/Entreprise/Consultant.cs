@@ -58,7 +58,7 @@ namespace Entreprise
                 }
             }
 
-            double salaire = baseSalary - 10 * dayEntreprise + bosssalary / 100 + 250*count;
+            double salaire = baseSalary - 10 * dayEntreprise + bosssalary / 100 + 250 * count;
             salaries.Add(year, salaire);
         }
 
@@ -83,20 +83,43 @@ namespace Entreprise
         /// <summary>
         /// Method that adds a new mission to the mission list of the consultant
         /// </summary>
-        /// <param name="year"></param>
         /// <param name="mission"></param>
-        public void AddMission(int year, Mission mission)
+        public void AddMission(Mission mission)
         {
-            try
+            int year = mission.StartDate.Year;
+
+            if (yearIn <= mission.StartDate.Year)
             {
-                missions[year].Add(mission);
+                try
+                {
+                    missions[year].Add(mission);
+                    // sortMission(missions[year]);
+                }
+
+                catch (KeyNotFoundException)
+                {
+                    List<Mission> list = new List<Mission>();
+                    missions.Add(year, list);
+                    missions[year].Add(mission);
+                }
 
             }
-            catch (KeyNotFoundException)
+            else
             {
-                List<Mission> list = new List<Mission>();
-                missions.Add(year, list);
-                missions[year].Add(mission);
+                throw new ArgumentException("");
+            }
+
+
+        }
+
+
+
+        private void sortMission(List<Mission> miss)
+        {
+            
+            foreach (Mission mi in miss)
+            {
+                Console.WriteLine(mi.StartDate);
             }
         }
 

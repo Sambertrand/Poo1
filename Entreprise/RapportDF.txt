@@ -1,12 +1,13 @@
-Listing des employés et leurs salaires
+Listing des employ�s et leurs salaires
  
 Directeurs :
  
-Martin Degeldt : 150000 €
-Sam Bertrand : 150000 €
-Julien Beard : 150000 €
+Martin Degeldt : 150000 �
+Sam Bertrand : 150000 �
+Julien Beard : 150000 �
  
 Managers et leurs consultants:
  
-Guilllaume Moff : 60500 €
-----|Ludo Merel : 31965 €
+Guilllaume Moff : 61000 �
+----|Ludo Merel : 31970 �
+----|Christophe Simon : 31970 �
