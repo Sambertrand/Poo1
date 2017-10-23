@@ -19,7 +19,15 @@ namespace Entreprise
             List<Client> ci = new List<Client>();
             DF difin = null;
             DRH direhu = null;
-            string[] lines = System.IO.File.ReadAllLines(@"../../../inputDir.txt");
+            string[] lines = null;
+            try
+            {
+                lines = System.IO.File.ReadAllLines(@"../../../inputDir.txt");
+            }
+            catch
+            {
+                Console.WriteLine("Error of loading directors");
+            }
             foreach (string line in lines)
             {
                 string[] words = line.Split(' ');
@@ -43,7 +51,16 @@ namespace Entreprise
                 }
             }
 
-            lines = System.IO.File.ReadAllLines(@"../../../inputMan.txt");
+            try
+            {
+                lines = System.IO.File.ReadAllLines(@"../../../inputMan.txt");
+
+            }
+            catch
+            {
+                Console.WriteLine("Error of loading managers");
+            }
+
             foreach (string line in lines)
             {
                 string[] words = line.Split(' ');
@@ -51,7 +68,15 @@ namespace Entreprise
                 ma.Add(manager);
             }
 
-            lines = System.IO.File.ReadAllLines(@"../../../inputCon.txt");
+            try
+            {
+                lines = System.IO.File.ReadAllLines(@"../../../inputCon.txt");
+            }
+            catch
+            {
+                Console.WriteLine("Error of loading consultants");
+            }
+
             foreach (string line in lines)
             {
                 string[] words = line.Split(' ');
@@ -65,8 +90,15 @@ namespace Entreprise
                 }
                 Consultant consultant = new Consultant(words[0], words[1], manager, Int32.Parse(words[3]), words[4]);
             }
+            try
+            {
+                lines = System.IO.File.ReadAllLines(@"../../../inputCli.txt");
+            }
+            catch
+            {
+                Console.WriteLine("Error of loading clients");
+            }
 
-            lines = System.IO.File.ReadAllLines(@"../../../inputCli.txt");
             foreach (string line in lines)
             {
                 string[] words = line.Split(' ');
@@ -74,7 +106,15 @@ namespace Entreprise
                 ci.Add(client);
             }
 
-            lines = System.IO.File.ReadAllLines(@"../../../inputMis.txt");
+            try
+            {
+                lines = System.IO.File.ReadAllLines(@"../../../inputMis.txt");
+            }
+
+            catch
+            {
+                Console.WriteLine("Error of loading missions");
+            }
             foreach (string line in lines)
             {
                 string[] words = line.Split(' ');
@@ -120,6 +160,9 @@ namespace Entreprise
             }
 
             // ##Display the elements of the var created
+
+            Console.ReadKey();
+            Console.Clear();
             foreach(Directeur dir in di)
             {
                 Console.WriteLine(dir);
@@ -245,12 +288,12 @@ namespace Entreprise
                     Console.Clear();
                     Console.WriteLine("Enter a year completed");
                     Console.WriteLine(" ");
-                    sel = Console.ReadLine();
 					bool H = true;
                     while (H)
                     {
                         try
                         {
+                            sel = Console.ReadLine();
                             if (Int32.Parse(sel) != DateTime.Now.Year)
                             {
                                 difin.GenerateReport(di, ma, 2016);
@@ -263,12 +306,14 @@ namespace Entreprise
                             {
                                 Console.WriteLine(" ");
                                 Console.WriteLine("Please enter a year completed");
+                                Console.WriteLine(" ");
                             }
                         }
                         catch
                         {
                             Console.WriteLine(" ");
                             Console.WriteLine("Please enter a year completed");
+                            Console.WriteLine(" ");
                         }
                     }
 

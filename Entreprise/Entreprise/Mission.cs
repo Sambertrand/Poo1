@@ -37,6 +37,7 @@ namespace Entreprise
             {
                 Console.WriteLine("Error when loading the mission {0}, {1}",
                                   Client.Name, Consultant);
+                Console.WriteLine(" ");
             }
 
         }

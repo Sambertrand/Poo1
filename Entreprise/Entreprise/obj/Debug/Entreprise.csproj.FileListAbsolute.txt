@@ -37,3 +37,12 @@ E:/MyDocs/School/ECAM/BA3/POO/Poo1/Entreprise/Entreprise/obj/Debug/Entreprise.pd
 /home/artoens/Documents/ECAM/BA3/Poo1/Entreprise/Entreprise/bin/Debug/Entreprise.pdb
 /home/artoens/Documents/ECAM/BA3/Poo1/Entreprise/Entreprise/bin/Debug/nunit.framework.dll
 /home/artoens/Documents/ECAM/BA3/Poo1/Entreprise/Entreprise/bin/Debug/nunit.framework.xml
+E:\MyDocs\School\ECAM\BA3\POO\Poo1\Entreprise\Entreprise\bin\Debug\Entreprise.exe.config
+E:\MyDocs\School\ECAM\BA3\POO\Poo1\Entreprise\Entreprise\bin\Debug\Entreprise.exe
+E:\MyDocs\School\ECAM\BA3\POO\Poo1\Entreprise\Entreprise\bin\Debug\Entreprise.pdb
+E:\MyDocs\School\ECAM\BA3\POO\Poo1\Entreprise\Entreprise\bin\Debug\nunit.framework.dll
+E:\MyDocs\School\ECAM\BA3\POO\Poo1\Entreprise\Entreprise\bin\Debug\nunit.framework.xml
+E:\MyDocs\School\ECAM\BA3\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.csprojResolveAssemblyReference.cache
+E:\MyDocs\School\ECAM\BA3\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.csproj.CoreCompileInputs.cache
+E:\MyDocs\School\ECAM\BA3\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.exe
+E:\MyDocs\School\ECAM\BA3\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.pdb
