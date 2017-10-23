@@ -49,6 +49,7 @@ namespace Entreprise
     public class TestManager
     {
         private Manager m;
+        private Client s;
         private Consultant c;
         List<Consultant> l = new List<Consultant>();
 
@@ -56,7 +57,8 @@ namespace Entreprise
         public void Init()
         {
             m = new Manager("Seb", "CBF", "MA01");
-            c = new Consultant("Martin", "D", m, 2017, "CO1701");
+            s = new Client("Sam", "CL00");
+            c = new Consultant("Martin", "D", m, 2017, "CO1701", s);
             l.Add(c);
         }
 
@@ -100,7 +102,7 @@ namespace Entreprise
             e = new DateTime(2017, 12, 31);
             m = new Manager("Seb", "CBF", "MA01");
             s = new Client("Sam", "CL00");
-            c = new Consultant("Martin", "D", m, 2017, "CO1701");
+            c = new Consultant("Martin", "D", m, 2017, "CO1701", s);
             p = new Mission(s, c, d, e);
         }
 

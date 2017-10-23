@@ -16,7 +16,7 @@ namespace Entreprise
              */
             List<Directeur> di = new List<Directeur>();
             List<Manager> ma = new List<Manager>();
-            List<Client> ci = new List<Client>();
+            List<Client> ci = new List<Client> {new Client("Entreprise", "CL00")};
             DF difin = null;
             DRH direhu = null;
             string[] lines = null;
@@ -70,6 +70,22 @@ namespace Entreprise
 
             try
             {
+                lines = System.IO.File.ReadAllLines(@"../../../inputCli.txt");
+            }
+            catch
+            {
+                Console.WriteLine("Error of loading clients");
+            }
+
+            foreach (string line in lines)
+            {
+                string[] words = line.Split(' ');
+                Client client = new Client(words[0], words[1]);
+                ci.Add(client);
+            }
+
+            try
+            {
                 lines = System.IO.File.ReadAllLines(@"../../../inputCon.txt");
             }
             catch
@@ -88,24 +104,11 @@ namespace Entreprise
                         manager = man;
                     }
                 }
-                Consultant consultant = new Consultant(words[0], words[1], manager, Int32.Parse(words[3]), words[4]);
-            }
-            try
-            {
-                lines = System.IO.File.ReadAllLines(@"../../../inputCli.txt");
-            }
-            catch
-            {
-                Console.WriteLine("Error of loading clients");
+                Consultant consultant = new Consultant(words[0], words[1], manager, Int32.Parse(words[3]), words[4], ci[0]);
             }
 
-            foreach (string line in lines)
-            {
-                string[] words = line.Split(' ');
-                Client client = new Client(words[0], words[1]);
-                ci.Add(client);
-            }
-
+            
+            
             try
             {
                 lines = System.IO.File.ReadAllLines(@"../../../inputMis.txt");
@@ -158,7 +161,7 @@ namespace Entreprise
                     new Mission(client, consultant, DateInbis, DateOut);
                 }
             }
-
+            
             // ##Display the elements of the var created
 
             Console.ReadKey();
@@ -181,11 +184,11 @@ namespace Entreprise
             foreach(Client cli in ci)
             {
                 Console.WriteLine(cli.Name);
-                foreach (Mission mis in cli.Missions[2016])
+                /*foreach (Mission mis in cli.Missions[2016])
                 {
                     Console.Write("----|");
                     Console.WriteLine(mis.Consultant);
-                }
+                }*/
                 foreach (Mission mis in cli.Missions[2017])
                 {
                     Console.Write("----|");
@@ -213,7 +216,7 @@ namespace Entreprise
                 Console.WriteLine("2. Get report of the Human Resources Director");
                 Console.WriteLine("3. Get report of the financial director");
                 Console.WriteLine(" ");
-                Console.WriteLine("press q to quit");
+                Console.WriteLine("enter q to quit");
 				Console.WriteLine(" ");
 				string sel = Console.ReadLine();
 

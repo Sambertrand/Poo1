@@ -19,6 +19,7 @@ namespace Entreprise
             new Dictionary<int, List<Mission>>();
         private int yearIn;
         private string matricule;
+        private Client entreprise;
 
         /// <summary>
         /// constructor
@@ -28,12 +29,14 @@ namespace Entreprise
         /// <param name="subOf"></param>
         /// <param name="yearIn"></param>
         /// <param name="matricule"></param>
-        public Consultant(string firstname, string lastname, Manager subOf, int yearIn, string matricule) : base(firstname, lastname)
+        public Consultant(string firstname, string lastname, Manager subOf, int yearIn, string matricule, Client entreprise) : base(firstname, lastname)
         {
             this.matricule = matricule;
             this.yearIn = yearIn;
             this.subOf = subOf;
             subOf.AddConsultant(this);
+            this.entreprise = entreprise;
+
         }
 
         /// <summary>
@@ -47,7 +50,7 @@ namespace Entreprise
             double bosssalary = subOf.GetYearSalary(year);
             foreach (Mission m in missions[year])
             {
-                if (m.Client.Name == "Entreprise")
+                if (m.Client == entreprise)
                 {
                     TimeSpan ts = m.EndDate - m.StartDate;
                     dayEntreprise += ts.Days;
@@ -92,8 +95,11 @@ namespace Entreprise
             {
                 try
                 {
-                    missions[year].Add(mission);
-                    // sortMission(missions[year]);
+                    if (missions[year].Last().EndDate.AddDays(1) <= mission.StartDate)
+                    //{
+                        // missions[year].Add(new Mission(entreprise, this, missions[year].Last().EndDate.AddDays(1), mission.StartDate.AddDays(-1)));
+                        missions[year].Add(mission);
+                    //}
                 }
 
                 catch (KeyNotFoundException)
@@ -110,17 +116,6 @@ namespace Entreprise
             }
 
 
-        }
-
-
-
-        private void sortMission(List<Mission> miss)
-        {
-            
-            foreach (Mission mi in miss)
-            {
-                Console.WriteLine(mi.StartDate);
-            }
         }
 
         public int YearIn
