@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace Entreprise
 {
+    /// <summary>
+    /// Test classes that wil lthat the simple methods in every other class
+    /// </summary>
     [TestFixture()]
     public class TestEmployee
     {
