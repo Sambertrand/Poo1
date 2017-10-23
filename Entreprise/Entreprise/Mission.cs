@@ -16,8 +16,8 @@ namespace Entreprise
         private Client client;
         private DateTime startDate;
         private DateTime endDate;
-        private int year;
-        private int year1;
+        private int startYear;
+        private int endYear;
 
         public Mission(Client client, Consultant consultant,
                        DateTime startDate, DateTime endDate)
@@ -26,8 +26,8 @@ namespace Entreprise
             this.endDate = endDate;
             this.client = client;
             this.consultant = consultant;
-            year = startDate.Year;
-            year1 = endDate.Year;
+            startYear = startDate.Year;
+            endYear = endDate.Year;
             try
             {
                 consultant.AddMission(this);
