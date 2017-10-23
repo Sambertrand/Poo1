@@ -159,7 +159,9 @@ namespace Entreprise
 
             */
 
-            while (true)
+            bool S = true;
+
+            while (S)
             {
                 Console.Clear();
                 Console.WriteLine("Select a mod (enter the number of your selection)");
@@ -168,9 +170,11 @@ namespace Entreprise
                 Console.WriteLine("2. Get report of the Human Resources Director");
                 Console.WriteLine("3. Get report of the financial director");
                 Console.WriteLine(" ");
-                string select = Console.ReadLine();
+                Console.WriteLine("press q to quit");
+				Console.WriteLine(" ");
+				string sel = Console.ReadLine();
 
-                if (select == "1")
+                if (sel == "1")
                 {
                     Console.Clear();
                     Console.WriteLine("Select a manager");
@@ -182,18 +186,18 @@ namespace Entreprise
                         count++;
                         Console.WriteLine(count.ToString() + ". " + man.ToString());
                     }
-                    bool cond = true;
-                    while (cond)
+                    bool M = true;
+                    while (M)
                     {
                         try
                         {
                             Console.WriteLine(" ");
-                            select = Console.ReadLine();
-                            ma[Int32.Parse(select) - 1].GenerateReport();
+                            sel = Console.ReadLine();
+                            ma[Int32.Parse(sel) - 1].GenerateReport();
                             Console.WriteLine(" ");
                             Console.WriteLine("Report generated");
                             Console.ReadKey();
-                            cond = false;
+                            M = false;
                         }
                         catch
                         {
@@ -203,7 +207,7 @@ namespace Entreprise
                     }
                 }
 
-                if (select == "2")
+                if (sel == "2")
                 {
                     Console.Clear();
                     Console.WriteLine("Select a client");
@@ -213,20 +217,20 @@ namespace Entreprise
                     foreach (Client cli in ci)
                     {
                         count++;
-                        Console.WriteLine(count.ToString() + ". " + cli.Name;
+                        Console.WriteLine(count.ToString() + ". " + cli.Name);
                     }
-                    bool cond = true;
-                    while (cond)
+                    bool F = true;
+                    while (F)
                     {
                         try
                         {
                             Console.WriteLine(" ");
-                            select = Console.ReadLine();
-                            difin.GenerateReport(ci[Int32.Parse(select) - 1]);
+                            sel = Console.ReadLine();
+                            direhu.GenerateReport(ci[Int32.Parse(sel) - 1]);
                             Console.WriteLine(" ");
                             Console.WriteLine("Report generated");
                             Console.ReadKey();
-                            cond = false;
+                            F = false;
                         }
                         catch
                         {
@@ -236,9 +240,43 @@ namespace Entreprise
                     }
                 }
 
-                if (select == "3")
+                if (sel == "3")
                 {
+                    Console.Clear();
+                    Console.WriteLine("Enter a year completed");
+                    Console.WriteLine(" ");
+                    sel = Console.ReadLine();
+					bool H = true;
+                    while (H)
+                    {
+                        try
+                        {
+                            if (Int32.Parse(sel) != DateTime.Now.Year)
+                            {
+                                difin.GenerateReport(di, ma, 2016);
+								Console.WriteLine(" ");
+								Console.WriteLine("Report generated");
+								Console.ReadKey();
+                                H = false;
+                            }
+                            else
+                            {
+                                Console.WriteLine(" ");
+                                Console.WriteLine("Please enter a year completed");
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Please enter a year completed");
+                        }
+                    }
 
+                }
+               
+                if (sel == "q" || sel == "Q")
+                {
+                    S = false;
                 }
             }
 

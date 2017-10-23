@@ -1,0 +1,23 @@
+﻿<Properties StartupConfiguration="{A802C4DC-EC73-4697-A766-3D9652F61147}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Entreprise/Test.cs">
+    <Files>
+      <File FileName="Entreprise/Program.cs" Line="278" Column="18" />
+      <File FileName="Entreprise/Client.cs" Line="1" Column="1" />
+      <File FileName="Entreprise/Consultant.cs" Line="1" Column="1" />
+      <File FileName="Entreprise/DF.cs" Line="1" Column="1" />
+      <File FileName="Entreprise/Directeur.cs" Line="1" Column="1" />
+      <File FileName="Entreprise/DRH.cs" Line="1" Column="1" />
+      <File FileName="Entreprise/Employee.cs" Line="1" Column="1" />
+      <File FileName="Entreprise/Manager.cs" Line="1" Column="1" />
+      <File FileName="Entreprise/Mission.cs" Line="1" Column="1" />
+      <File FileName="Entreprise/Test.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Entreprise PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
