@@ -6,13 +6,27 @@ using System.Text;
 
 namespace Entreprise
 {
+    /// <summary>
+    /// Financial Directors Class that will genrate his report
+    /// </summary>
     public class DF : Directeur
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="firstname"></param>
+        /// <param name="lastname"></param>
         public DF(string firstname, string lastname) : base(firstname, lastname)
         {
 
         }
 
+        /// <summary>
+        /// Report genrator
+        /// </summary>
+        /// <param name="directeurs"></param>
+        /// <param name="managers"></param>
+        /// <param name="year"></param>
         public void GenerateReport(List<Directeur> directeurs, List<Manager> managers, int year)
         {
             List<string> lines = new List<string>

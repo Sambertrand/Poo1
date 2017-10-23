@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace Entreprise
 {
     /// <summary>
-    /// This is the Clients class with get consultant missions 
+    /// This is the Clients class that gets consultant missions 
     /// </summary>
     public class Client
     {
