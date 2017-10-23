@@ -25,19 +25,16 @@ namespace Entreprise
             this.consultant = consultant;
             year = startDate.Year;
             year1 = endDate.Year;
-            if (year == year1)
+            try
             {
-                client.AddMission(year, this);
-                consultant.AddMission(year, this);
+                consultant.AddMission(this);
+                client.AddMission(this);
             }
-            /*else
+            catch
             {
-                // à faire dans le READER
-                new Mission(client, consultant, DateTime(year1, 01, 01), endDate);
-                new Mission(client, consultant, startDate, DateTime(year, 12, 31));
-
+                Console.WriteLine("Error when loading the mission {0}, {1}",
+                                  Client.Name, Consultant);
             }
-            */
 
         }
 

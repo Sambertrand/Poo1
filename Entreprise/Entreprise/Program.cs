@@ -119,7 +119,7 @@ namespace Entreprise
                 }
             }
 
-            /* ##Display the elements of the var creadted
+            // ##Display the elements of the var creadted
             foreach(Directeur dir in di)
             {
                 Console.WriteLine(dir);
@@ -157,7 +157,7 @@ namespace Entreprise
 
             Console.ReadKey();
 
-            */
+            
 
             bool S = true;
 
