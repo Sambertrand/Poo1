@@ -205,7 +205,35 @@ namespace Entreprise
 
                 if (select == "2")
                 {
+                    Console.Clear();
+                    Console.WriteLine("Select a client");
+                    Console.WriteLine(" ");
 
+                    int count = 0;
+                    foreach (Client cli in ci)
+                    {
+                        count++;
+                        Console.WriteLine(count.ToString() + ". " + cli.Name;
+                    }
+                    bool cond = true;
+                    while (cond)
+                    {
+                        try
+                        {
+                            Console.WriteLine(" ");
+                            select = Console.ReadLine();
+                            difin.GenerateReport(ci[Int32.Parse(select) - 1]);
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Report generated");
+                            Console.ReadKey();
+                            cond = false;
+                        }
+                        catch
+                        {
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Please select a client");
+                        }
+                    }
                 }
 
                 if (select == "3")
