@@ -24,7 +24,7 @@ namespace Entreprise
         public void TestwriteName()
         {
             Assert.AreEqual("Martin Degeldt", e.ToString());
-            Assert.AreEqual("", m.ToString());
+            Assert.AreEqual(" ", m.ToString());
         }
     }
     [TestFixture()]
@@ -39,7 +39,7 @@ namespace Entreprise
         }
 
         [Test()]
-        public void TestGetSalary()
+        public void TestGetDirectorSalary()
         {
             Assert.AreEqual(150000, d.GetSalary);
         }
@@ -61,13 +61,6 @@ namespace Entreprise
             c = new Consultant("Martin", "D", m, 2017, "CO1701", s);
             l.Add(c);
         }
-
-        [Test()]
-        public void TestWriteName()
-        {
-            Assert.AreEqual("Seb CBF", m.ToString());
-
-        }
         [Test()]
         public void TestGetSubs()
         {
@@ -76,15 +69,15 @@ namespace Entreprise
         }
 
         /*[Test()]
-        public void TestGetSalary()
+        public void TestGetManagerYearSalary()
         {
             Assert.AreEqual(60500, m.GetYearSalary(2017));            
             Assert.AreEqual(60000, m.GetYearSalary(2016));
         }
-        à demander au proffeseur
+        //à demander au proffeseur
         */
-    }
 
+    }
     [TestFixture()]
     public class TestConsultant
     {
@@ -109,25 +102,8 @@ namespace Entreprise
         [Test()]
         public void TestConsultantGetYearSalary()
         {
-            Assert.AreEqual(35605, c.GetYearSalary(2017));
+            Assert.AreEqual(33325, c.GetYearSalary(2017));
             Assert.AreEqual(0, c.GetYearSalary(2016));
-        }
-    }
-    [TestFixture()]
-    public class TestClient
-    {
-        private Client s;
-
-        [SetUp()]
-        public void Init()
-        {
-            s = new Client("Sam", "CL00");
-        }
-
-        [Test()]
-        public void TestClientName()
-        {
-            Assert.AreEqual("Sam", s.Name);
         }
     }
 }

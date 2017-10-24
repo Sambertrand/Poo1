@@ -6,3 +6,12 @@ E:\MyDocs\School\ECAM\BA3\POO\Poo1\Entreprise\Entreprise\bin\Debug\nunit.framewo
 E:\MyDocs\School\ECAM\BA3\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.csproj.CoreCompileInputs.cache
 E:\MyDocs\School\ECAM\BA3\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.exe
 E:\MyDocs\School\ECAM\BA3\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.pdb
+C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\bin\Debug\Entreprise.exe.config
+C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\bin\Debug\Entreprise.exe
+C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\bin\Debug\Entreprise.pdb
+C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\bin\Debug\nunit.framework.dll
+C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\bin\Debug\nunit.framework.xml
+C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.csprojResolveAssemblyReference.cache
+C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.csproj.CoreCompileInputs.cache
+C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.exe
+C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.pdb
