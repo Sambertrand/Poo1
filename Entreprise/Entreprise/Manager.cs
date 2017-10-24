@@ -19,19 +19,13 @@ namespace Entreprise
         private Dictionary<int, double> salaries = new Dictionary<int, double>();
         private string matricule;
 
-        /// <summary>
-        /// constructor
-        /// </summary>
-        /// <param name="firstname"></param>
-        /// <param name="lastname"></param>
-        /// <param name="matricule"></param>
         public Manager(string firstname, string lastname, string matricule) : base(firstname, lastname)
         {
             this.matricule = matricule;
         }
 
         /// <summary>
-        /// internal method used to add consultant in the list of consultant the manager is a boss of
+        /// internal method used to add consultant to the managers list
         /// </summary>
         /// <param name="consultant"></param>
         public void AddConsultant(Consultant consultant)
@@ -39,10 +33,6 @@ namespace Entreprise
             bossOf.Add(consultant);
         }
 
-        /// <summary>
-        /// updates the salary depending on a year
-        /// </summary>
-        /// <param name="year"></param>
         private void UpdateSalary(int year)
         {
             int count = 0;
@@ -69,20 +59,12 @@ namespace Entreprise
             get { return matricule; }
         }
 
-        /// <summary>
-        /// method that return the salary of a given year
-        /// </summary>
-        /// <param name="year"></param>
-        /// <returns></returns>
         public double GetYearSalary(int year)
         {
             UpdateSalary(year);
             return salaries[year];
         }
 
-        /// <summary>
-        /// generates the report as text document
-        /// </summary>
         public void GenerateReport()
         {
             List<string> lines = new List<string>

@@ -162,7 +162,7 @@ namespace Entreprise
                 }
             }
             
-            // ##Display the elements of the var created
+           // ##Display the elements of the var created
 
             Console.ReadKey();
             Console.Clear();
@@ -188,7 +188,8 @@ namespace Entreprise
                 {
                     Console.Write("----|");
                     Console.WriteLine(mis.Consultant);
-                }*/
+                }
+                */
                 foreach (Mission mis in cli.Missions[2017])
                 {
                     Console.Write("----|");

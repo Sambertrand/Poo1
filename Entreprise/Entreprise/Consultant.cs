@@ -6,9 +6,6 @@ using System.Text;
 
 namespace Entreprise
 {
-    /// <summary>
-    /// Class that generates Employees that are consultants with missions and managers
-    /// </summary>
     public class Consultant : Employee
     {
 
@@ -21,14 +18,6 @@ namespace Entreprise
         private string matricule;
         private Client entreprise;
 
-        /// <summary>
-        /// constructor
-        /// </summary>
-        /// <param name="firstname"></param>
-        /// <param name="lastname"></param>
-        /// <param name="subOf"></param>
-        /// <param name="yearIn"></param>
-        /// <param name="matricule"></param>
         public Consultant(string firstname, string lastname, Manager subOf, int yearIn, string matricule, Client entreprise) : base(firstname, lastname)
         {
             this.matricule = matricule;
@@ -39,10 +28,6 @@ namespace Entreprise
 
         }
 
-        /// <summary>
-        /// Method that generates the salary of the consultant for any given year
-        /// </summary>
-        /// <param name="year"></param>
         private void UpdateSalaries(int year)
         {
             int dayEntreprise = 0;
@@ -65,11 +50,6 @@ namespace Entreprise
             salaries.Add(year, salaire);
         }
 
-        /// <summary>
-        /// Method that returns the salary of the consultant for any given year
-        /// </summary>
-        /// <param name="year"></param>
-        /// <returns></returns>
         public double GetYearSalary(int year)
         {
             try
@@ -83,10 +63,6 @@ namespace Entreprise
             return salaries[year];
         }
 
-        /// <summary>
-        /// Method that adds a new mission to the mission list of the consultant
-        /// </summary>
-        /// <param name="mission"></param>
         public void AddMission(Mission mission)
         {
             int year = mission.StartDate.Year;

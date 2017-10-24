@@ -7,9 +7,6 @@ using NUnit.Framework;
 
 namespace Entreprise
 {
-    /// <summary>
-    /// This is the Clients class that gets consultant missions 
-    /// </summary>
     public class Client
     {
         private string matricule;
@@ -24,9 +21,6 @@ namespace Entreprise
             this.matricule = matricule;
         }
 
-        /// <summary>
-        /// Method made to get the clients name publically
-        /// </summary>
         public string Name
         {
             get { return name; }
@@ -37,10 +31,6 @@ namespace Entreprise
             get { return matricule; }
         }
 
-        /// <summary>
-        /// Method that adds a mission to the clients missions list used to generate the DRH report
-        /// </summary>
-        /// <param name="mission"></param>
         public void AddMission(Mission mission)
         {
 			int year = mission.StartDate.Year;
