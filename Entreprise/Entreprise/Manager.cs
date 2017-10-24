@@ -6,11 +6,6 @@ using System.Text;
 
 namespace Entreprise
 {
-
-
-    /// <summary>
-    /// Manager class subclass of employee and is boss of consultants
-    /// </summary>
     public class Manager : Employee
     {
 
@@ -46,9 +41,6 @@ namespace Entreprise
             salaries[year] = baseSalary + (500 * count);
         }
 
-        /// <summary>
-        /// Method that generates a list of consultants for the report
-        /// </summary>
         public List<Consultant> GetSubs
         {
             get { return bossOf; }

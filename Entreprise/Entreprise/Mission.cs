@@ -6,9 +6,6 @@ using System.Text;
 
 namespace Entreprise
 {
-    /// <summary>
-    /// Class that will take care of the missons consultants are send on at a clients demand
-    /// </summary>
     public class Mission
     {
 

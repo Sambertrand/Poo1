@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-/// <summary>
-/// Director superclass and subclass of employee
-/// </summary>
 public class Directeur : Employee
 {
 
