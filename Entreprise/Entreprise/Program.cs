@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using System.Text.RegularExpressions;
 
 namespace Entreprise
 {
@@ -14,6 +15,7 @@ namespace Entreprise
             /**
              * Load from the input files
              */
+            //READ DIRCTOR
             List<Directeur> di = new List<Directeur>();
             List<Manager> ma = new List<Manager>();
             List<Client> ci = new List<Client> {new Client("Entreprise", "CL00")};
@@ -28,29 +30,36 @@ namespace Entreprise
             {
                 Console.WriteLine("Error of loading directors");
             }
+            string patternDI = @"^D[IFH] \w+ \w+$";
+            Regex rgxDI = new Regex(patternDI);
             foreach (string line in lines)
             {
-                string[] words = line.Split(' ');
-
-                if (words[0] == "DI")
+                if (rgxDI.IsMatch(line))
                 {
-                    Directeur directeur = new Directeur(words[1], words[2]);
-                    di.Add(directeur);
-                }
+                    string[] words = line.Split(' ');
 
-                if (words[0] == "DF")
-                {
-                    difin = new DF(words[1], words[2]);
-                    di.Add(difin);
-                }
+                    if (words[0] == "DI")
+                    {
+                        Directeur directeur = new Directeur(words[1], words[2]);
+                        di.Add(directeur);
+                    }
 
-                if (words[0] == "DH")
-                {
-                    direhu = new DRH(words[1], words[2]);
-                    di.Add(direhu);
+                    if (words[0] == "DF")
+                    {
+                        difin = new DF(words[1], words[2]);
+                        di.Add(difin);
+                    }
+
+                    if (words[0] == "DH")
+                    {
+                        direhu = new DRH(words[1], words[2]);
+                        di.Add(direhu);
+                    }
                 }
             }
 
+            //READ MANAGERS
+            
             try
             {
                 lines = System.IO.File.ReadAllLines(@"../../../inputMan.txt");
@@ -61,13 +70,20 @@ namespace Entreprise
                 Console.WriteLine("Error of loading managers");
             }
 
+            string patternMA = @"^\w+ \w+ MA\d+$";
+            Regex rgxMA = new Regex(patternMA);
+            
             foreach (string line in lines)
             {
-                string[] words = line.Split(' ');
-                Manager manager = new Manager(words[0], words[1], words[2]);
-                ma.Add(manager);
+                if (rgxMA.IsMatch(line))
+                {
+                    string[] words = line.Split(' ');
+                    Manager manager = new Manager(words[0], words[1], words[2]);
+                    ma.Add(manager);
+                }
             }
-
+            
+            //READ CLIENTS
             try
             {
                 lines = System.IO.File.ReadAllLines(@"../../../inputCli.txt");
@@ -77,13 +93,20 @@ namespace Entreprise
                 Console.WriteLine("Error of loading clients");
             }
 
+            string patternCI = @"^\w+ CL\d+$";
+            Regex rgxCI = new Regex(patternCI);
+
             foreach (string line in lines)
             {
-                string[] words = line.Split(' ');
-                Client client = new Client(words[0], words[1]);
-                ci.Add(client);
+                if (rgxCI.IsMatch(line))
+                {
+                    string[] words = line.Split(' ');
+                    Client client = new Client(words[0], words[1]);
+                    ci.Add(client);
+                }
             }
 
+            //READ CONSULTANTS
             try
             {
                 lines = System.IO.File.ReadAllLines(@"../../../inputCon.txt");
@@ -93,22 +116,28 @@ namespace Entreprise
                 Console.WriteLine("Error of loading consultants");
             }
 
+            string patternCO = @"^\w+ \w+ MA\d+ \d{2}(?:\d{2}) CO(1)\d+$";
+            Regex rgxCO = new Regex(patternCO);
+
             foreach (string line in lines)
             {
                 string[] words = line.Split(' ');
                 Manager manager = null;
-                foreach (Manager man in ma)
+                if (rgxCO.IsMatch(line))
                 {
-                    if (man.Matricule == words[2])
+                    foreach (Manager man in ma)
                     {
-                        manager = man;
+                        if (man.Matricule == words[2])
+                        {
+                            manager = man;
+                        }
                     }
                 }
                 Consultant consultant = new Consultant(words[0], words[1], manager, Int32.Parse(words[3]), words[4], ci[0]);
             }
 
             
-            
+            //READ MISSION
             try
             {
                 lines = System.IO.File.ReadAllLines(@"../../../inputMis.txt");
@@ -161,16 +190,13 @@ namespace Entreprise
                     while (DateInbis.AddYears(c).Year < DateOut.Year)
                     {
                         c++;
-                        DateOutbis.AddYears(c);
-                        new Mission(client, consultant, DateInbis, DateOutbis);
-                        DateInbis.AddYears(c);
-                        Console.WriteLine(DateInbis);
+                        new Mission(client, consultant, DateInbis.AddYears((c-1)), DateOutbis.AddYears(c));
                     }
-                    new Mission(client, consultant, DateInbis, DateOut);
+                    new Mission(client, consultant, DateInbis.AddYears(c), DateOut);
                 }
             }
             
-           // ##Display the elements of the var created
+           // ##Display the elements of the variables created
            
             Console.ReadKey();
             Console.Clear();
@@ -196,7 +222,7 @@ namespace Entreprise
                 {
                     foreach(Mission mis in miss)
                     {
-                        Console.Write("----|");
+                        Console.Write(mis.EndDate.Year + "----|");
                         Console.WriteLine(mis.Consultant);
                     }
                 }

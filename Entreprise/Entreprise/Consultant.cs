@@ -78,6 +78,9 @@ namespace Entreprise
                     }
                     else
                     {
+                        Console.WriteLine(missions[year].Last().EndDate.AddDays(1));
+                        Console.WriteLine(missions[year].Last().StartDate.AddDays(1));
+                        Console.WriteLine(mission.StartDate);
                         throw new Exception("DateExeption");
                     }
                 }
