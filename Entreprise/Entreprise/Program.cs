@@ -214,8 +214,8 @@ namespace Entreprise
                 }
             }
             
-           // ##Display the elements of the variables created
-           
+           // ##Display the elements of the variables created (tree)
+           /*
             Console.ReadKey();
             Console.Clear();
             foreach(Directeur dir in di)
@@ -247,6 +247,7 @@ namespace Entreprise
             }
 
             Console.ReadKey();
+            */
             
             //UI
             bool S = true;
