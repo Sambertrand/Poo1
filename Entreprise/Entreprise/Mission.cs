@@ -32,8 +32,8 @@ namespace Entreprise
             }
             catch
             {
-                Console.WriteLine("Error when loading the mission {0}, {1}",
-                                  Client.Name, Consultant);
+                Console.WriteLine("Error when loading the mission {0}, {1}, from {2} to {3}",
+                                  Client.Name, Consultant, startDate.ToString("dd/MM/yyyy"), endDate.ToString("dd/MM/yyyy"));
                 Console.WriteLine(" ");
             }
 

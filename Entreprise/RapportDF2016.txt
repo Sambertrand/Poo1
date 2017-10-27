@@ -1,0 +1,13 @@
+Listing des employés et leurs salaires
+ 
+Directeurs :
+ 
+Martin Degeldt : 150000 €
+Sam Bertrand : 150000 €
+Julien Beard : 150000 €
+ 
+Managers et leurs consultants:
+ 
+Guilllaume Moff : 61000 €
+----|Quentin Lurkin : 36110 €
+----|Christophe Simon : 34640 €

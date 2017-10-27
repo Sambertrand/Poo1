@@ -29,7 +29,7 @@ namespace Entreprise
                 
                 foreach (Mission mis in client.Missions[now.Year])
                 {
-                    line = mis.Consultant.ToString() + " : du " + mis.StartDate.ToString("MM/dd/yyyy") + " au " + mis.EndDate.ToString("MM/dd/yyyy");
+                    line = mis.Consultant.ToString() + " : du " + mis.StartDate.ToString("dd/MM/yyyy") + " au " + mis.EndDate.ToString("dd/MM/yyyy");
                     lines.Add(line);
                 }
             }

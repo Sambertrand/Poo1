@@ -15,7 +15,8 @@ namespace Entreprise
 
         public void GenerateReport(List<Directeur> directeurs, List<Manager> managers, int year)
         {
-            List<string> lines = new List<string>
+            string path = @"../../../RapportDF" + year + ".txt";
+            List <string> lines = new List<string>
             {
                 "Listing des employés et leurs salaires",
                 " ",
@@ -38,15 +39,18 @@ namespace Entreprise
             {
                 line = man.ToString() + " : " + man.GetYearSalary(year) + " €";
                 lines.Add(line);
-                foreach(Consultant con in man.GetSubs)
+                foreach (Consultant con in man.GetSubs)
                 {
-                    line = "----|" + con.ToString() + " : " + con.GetYearSalary(year) + " €";
-                    lines.Add(line);
+                    if (con.YearIn <= year)
+                    {
+                        line = "----|" + con.ToString() + " : " + con.GetYearSalary(year) + " €";
+                        lines.Add(line);
+                    }
                 }
             }
 
             lines.ToArray();
-            System.IO.File.WriteAllLines(@"../../../RapportDF.txt", lines);
+            System.IO.File.WriteAllLines(path, lines);
         }
     }
 }

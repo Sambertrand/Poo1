@@ -72,20 +72,24 @@ namespace Entreprise
                 try
                 {
                     if (missions[year].Last().EndDate.AddDays(1) <= mission.StartDate)
-                    //{
-                        // missions[year].Add(new Mission(entreprise, this, missions[year].Last().EndDate.AddDays(1), mission.StartDate.AddDays(-1)));
+                    {
+                        //missions[year].Add(new Mission(entreprise, this, missions[year].Last().EndDate.AddDays(1), mission.StartDate.AddDays(-1)));
                         missions[year].Add(mission);
-                    //}
+                    }
+                    else
+                    {
+                        throw new Exception("DateExeption");
+                    }
                 }
-
+                
                 catch (KeyNotFoundException)
                 {
                     List<Mission> list = new List<Mission>();
                     missions.Add(year, list);
                     missions[year].Add(mission);
                 }
-
             }
+
             else
             {
                 throw new ArgumentException("");

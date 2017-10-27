@@ -154,16 +154,24 @@ namespace Entreprise
                 }
                 else
                 {
-                    DateTime DateInbis = new DateTime(DateOut.Year, 01, 01);
                     DateTime DateOutbis = new DateTime(DateIn.Year, 12, 31);
-
                     new Mission(client, consultant, DateIn, DateOutbis);
+                    DateTime DateInbis = new DateTime(DateOutbis.AddYears(1).Year, 01, 01);
+                    int c = 0;
+                    while (DateInbis.AddYears(c).Year < DateOut.Year)
+                    {
+                        c++;
+                        DateOutbis.AddYears(c);
+                        new Mission(client, consultant, DateInbis, DateOutbis);
+                        DateInbis.AddYears(c);
+                        Console.WriteLine(DateInbis);
+                    }
                     new Mission(client, consultant, DateInbis, DateOut);
                 }
             }
             
            // ##Display the elements of the var created
-           /*
+           
             Console.ReadKey();
             Console.Clear();
             foreach(Directeur dir in di)
@@ -184,28 +192,19 @@ namespace Entreprise
             foreach(Client cli in ci)
             {
                 Console.WriteLine(cli.Name);
-                foreach (Mission mis in cli.Missions[2016])
+                foreach (List<Mission> miss in cli.Missions.Values)
                 {
-                    Console.Write("----|");
-                    Console.WriteLine(mis.Consultant);
-                }
-                
-                foreach (Mission mis in cli.Missions[2017])
-                {
-                    Console.Write("----|");
-                    Console.WriteLine(mis.Consultant);
+                    foreach(Mission mis in miss)
+                    {
+                        Console.Write("----|");
+                        Console.WriteLine(mis.Consultant);
+                    }
                 }
             }
 
-            ma[0].GenerateReport();
-            direhu.GenerateReport(ci[0]);
-            difin.GenerateReport(di, ma, 2016);
-            difin.GenerateReport(di, ma, 2017);
-
             Console.ReadKey();
-            */
             
-
+            //UI
             bool S = true;
 
             while (S)
@@ -252,6 +251,7 @@ namespace Entreprise
                             Console.WriteLine("Please select a manager");
                         }
                     }
+                    sel = null;
                 }
 
                 if (sel == "2")
@@ -269,8 +269,8 @@ namespace Entreprise
                     bool F = true;
                     while (F)
                     {
-                        //try
-                        //{
+                        try
+                        {
                             Console.WriteLine(" ");
                             sel = Console.ReadLine();
                             direhu.GenerateReport(ci[Int32.Parse(sel) - 1]);
@@ -278,13 +278,14 @@ namespace Entreprise
                             Console.WriteLine("Report generated");
                             Console.ReadKey();
                             F = false;
-                        //}
-                        /*catch
+                        }
+                        catch
                         {
                             Console.WriteLine(" ");
                             Console.WriteLine("Please select a client");
-                        }*/
+                        }
                     }
+                    sel = null;
                 }
 
                 if (sel == "3")
@@ -300,7 +301,7 @@ namespace Entreprise
                             sel = Console.ReadLine();
                             if (Int32.Parse(sel) != DateTime.Now.Year)
                             {
-                                difin.GenerateReport(di, ma, 2016);
+                                difin.GenerateReport(di, ma, Int32.Parse(sel));
 								Console.WriteLine(" ");
 								Console.WriteLine("Report generated");
 								Console.ReadKey();
@@ -320,7 +321,7 @@ namespace Entreprise
                             Console.WriteLine(" ");
                         }
                     }
-
+                    sel = null;
                 }
                
                 if (sel == "q" || sel == "Q")
@@ -328,8 +329,6 @@ namespace Entreprise
                     S = false;
                 }
             }
-
-            
         }
     }
 }
