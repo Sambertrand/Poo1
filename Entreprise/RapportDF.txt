@@ -8,6 +8,6 @@ Julien Beard : 150000 €
  
 Managers et leurs consultants:
  
-Guilllaume Moff : 61000 €
-----|Ludo Merel : 34670 €
-----|Christophe Simon : 31970 €
+Guilllaume Moff : 60500 €
+----|Ludo Merel : 0 €
+----|Christophe Simon : 34635 €

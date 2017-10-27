@@ -163,7 +163,7 @@ namespace Entreprise
             }
             
            // ##Display the elements of the var created
-
+           /*
             Console.ReadKey();
             Console.Clear();
             foreach(Directeur dir in di)
@@ -184,12 +184,12 @@ namespace Entreprise
             foreach(Client cli in ci)
             {
                 Console.WriteLine(cli.Name);
-                /*foreach (Mission mis in cli.Missions[2016])
+                foreach (Mission mis in cli.Missions[2016])
                 {
                     Console.Write("----|");
                     Console.WriteLine(mis.Consultant);
                 }
-                */
+                
                 foreach (Mission mis in cli.Missions[2017])
                 {
                     Console.Write("----|");
@@ -203,7 +203,7 @@ namespace Entreprise
             difin.GenerateReport(di, ma, 2017);
 
             Console.ReadKey();
-
+            */
             
 
             bool S = true;
@@ -269,8 +269,8 @@ namespace Entreprise
                     bool F = true;
                     while (F)
                     {
-                        try
-                        {
+                        //try
+                        //{
                             Console.WriteLine(" ");
                             sel = Console.ReadLine();
                             direhu.GenerateReport(ci[Int32.Parse(sel) - 1]);
@@ -278,12 +278,12 @@ namespace Entreprise
                             Console.WriteLine("Report generated");
                             Console.ReadKey();
                             F = false;
-                        }
-                        catch
+                        //}
+                        /*catch
                         {
                             Console.WriteLine(" ");
                             Console.WriteLine("Please select a client");
-                        }
+                        }*/
                     }
                 }
 

@@ -15,3 +15,4 @@ C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.cspro
 C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.csproj.CoreCompileInputs.cache
 C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.exe
 C:\Users\sambe\Desktop\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.pdb
+E:\MyDocs\School\ECAM\BA3\POO\Poo1\Entreprise\Entreprise\obj\Debug\Entreprise.csprojResolveAssemblyReference.cache
