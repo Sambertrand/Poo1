@@ -73,14 +73,10 @@ namespace Entreprise
                 {
                     if (missions[year].Last().EndDate.AddDays(1) <= mission.StartDate)
                     {
-                        //missions[year].Add(new Mission(entreprise, this, missions[year].Last().EndDate.AddDays(1), mission.StartDate.AddDays(-1)));
                         missions[year].Add(mission);
                     }
                     else
                     {
-                        Console.WriteLine(missions[year].Last().EndDate.AddDays(1));
-                        Console.WriteLine(missions[year].Last().StartDate.AddDays(1));
-                        Console.WriteLine(mission.StartDate);
                         throw new Exception("DateExeption");
                     }
                 }

@@ -104,6 +104,11 @@ namespace Entreprise
                     Client client = new Client(words[0], words[1]);
                     ci.Add(client);
                 }
+                else
+                {
+                    Console.WriteLine("merde");
+                }
+
             }
 
             //READ CONSULTANTS
@@ -116,23 +121,25 @@ namespace Entreprise
                 Console.WriteLine("Error of loading consultants");
             }
 
-            string patternCO = @"^\w+ \w+ MA\d+ \d{2}(?:\d{2}) CO(1)\d+$";
+            string patternCO = @"^\w+ \w+ MA\d+ \d{2}(?:\d{2}) CO($1)\d+$";
             Regex rgxCO = new Regex(patternCO);
 
             foreach (string line in lines)
             {
                 string[] words = line.Split(' ');
                 Manager manager = null;
-                if (rgxCO.IsMatch(line))
-                {
+                //if (rgxCO.IsMatch(line))
+                //{
                     foreach (Manager man in ma)
                     {
+
                         if (man.Matricule == words[2])
                         {
                             manager = man;
                         }
+
                     }
-                }
+               //}
                 Consultant consultant = new Consultant(words[0], words[1], manager, Int32.Parse(words[3]), words[4], ci[0]);
             }
 
@@ -147,6 +154,10 @@ namespace Entreprise
             {
                 Console.WriteLine("Error of loading missions");
             }
+
+            //string patternMI = @"^CL\d+ CO\d{2}\d+ (((31-((0[13578])|(1[02])))|([012]\d)-((0\d)|(1[012]))|(30-((0[13456789])|1[012])))-\d{4}) (((31-((0[13578])|(1[02])))|([012]\d)-((0\d)|(1[012]))|(30-((0[13456789])|1[012])))-\d{4})$";
+            //Regex rgxMI = new Regex(patternMI);
+
             foreach (string line in lines)
             {
                 string[] words = line.Split(' ');
@@ -176,7 +187,14 @@ namespace Entreprise
                         }
                     }
                 }
-
+                try
+                {
+                    new Mission(ci[0], consultant, consultant.GetMissions(DateIn.Year).Last().EndDate.AddDays(1), DateIn.AddDays(-1));
+                }
+                catch (KeyNotFoundException)
+                {
+                    //no mission in the consultant yet
+                }
                 if (DateIn.Year == DateOut.Year)
                 {
                     new Mission(client, consultant, DateIn, DateOut);
